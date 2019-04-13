@@ -1,20 +1,20 @@
-diff --git a/config.def.h b/config.def.h
-index 823e79f..82b1b09 100644
---- a/config.def.h
-+++ b/config.def.h
-@@ -177,6 +177,7 @@ static Shortcut shortcuts[] = {
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+Index: stterm/config.def.h
+===================================================================
+--- stterm.orig/config.def.h	2019-04-13 21:15:32.430573302 +0100
++++ stterm/config.def.h	2019-04-13 21:15:32.426573270 +0100
+@@ -192,6 +192,7 @@
+ 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
  	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
+ 	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
 +	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
  };
  
  /*
-diff --git a/st.1 b/st.1
-index e8d6059..81bceff 100644
---- a/st.1
-+++ b/st.1
-@@ -159,6 +159,10 @@ Copy the selected text to the clipboard selection.
+Index: stterm/st.1
+===================================================================
+--- stterm.orig/st.1	2019-04-13 21:15:32.430573302 +0100
++++ stterm/st.1	2019-04-13 21:15:32.426573270 +0100
+@@ -159,6 +159,10 @@
  .TP
  .B Ctrl-Shift-v
  Paste from the clipboard selection.
@@ -25,10 +25,10 @@ index e8d6059..81bceff 100644
  .SH CUSTOMIZATION
  .B st
  can be customized by creating a custom config.h and (re)compiling the source
-diff --git a/st.c b/st.c
-index 574dbee..76bb3ea 100644
---- a/st.c
-+++ b/st.c
+Index: stterm/st.c
+===================================================================
+--- stterm.orig/st.c	2019-04-13 21:15:32.430573302 +0100
++++ stterm/st.c	2019-04-13 21:15:32.426573270 +0100
 @@ -38,11 +38,15 @@
  
  /* macros */
@@ -45,11 +45,10 @@ index 574dbee..76bb3ea 100644
  enum term_mode {
  	MODE_WRAP        = 1 << 0,
  	MODE_INSERT      = 1 << 1,
-@@ -1977,6 +1981,28 @@ tprinter(char *s, size_t len)
- 	}
+@@ -1981,6 +1985,28 @@
  }
  
-+void
+ void
 +iso14755(const Arg *arg)
 +{
 +	FILE *p;
@@ -71,14 +70,15 @@ index 574dbee..76bb3ea 100644
 +	ttywrite(uc, utf8encode(utf32, uc), 1);
 +}
 +
- void
++void
  toggleprinter(const Arg *arg)
  {
-diff --git a/st.h b/st.h
-index 38c61c4..dac64d8 100644
---- a/st.h
-+++ b/st.h
-@@ -80,6 +80,7 @@ void die(const char *, ...);
+ 	term.mode ^= MODE_PRINT;
+Index: stterm/st.h
+===================================================================
+--- stterm.orig/st.h	2019-04-13 21:15:32.430573302 +0100
++++ stterm/st.h	2019-04-13 21:15:32.426573270 +0100
+@@ -80,6 +80,7 @@
  void redraw(void);
  void draw(void);
  
