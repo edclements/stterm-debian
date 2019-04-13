@@ -1,3 +1,13 @@
+stterm (0.8.2-1.1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Patch: no bold colors.
+  * Patch: solarized colors. Swap light/dark with F6.
+  * Patch: anysize. Expands to fill space.
+  * Patch: iso14755. Unicode character entry.
+
+ -- Ed Clements <ed.clements+deb.gmail.com>  Sat, 13 Apr 2019 21:05:10 +0100
+
 stterm (0.8.2-1) unstable; urgency=medium
 
   * New upstream version 0.8.1 (closes: 921961)
