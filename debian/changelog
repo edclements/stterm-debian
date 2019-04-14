@@ -7,7 +7,7 @@ stterm (0.8.2-1.1) UNRELEASED; urgency=medium
   * Patch: iso14755. Unicode character entry.
   * Patch: Hack font.
 
- -- Ed Clements <ed.clements+deb.gmail.com>  Sat, 13 Apr 2019 21:05:10 +0100
+ -- Ed Clements <ed.clements+deb@gmail.com>  Sat, 13 Apr 2019 21:05:10 +0100
 
 stterm (0.8.2-1) unstable; urgency=medium
 
