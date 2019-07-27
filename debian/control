@@ -14,8 +14,8 @@ Homepage: https://st.suckless.org
 Package: stterm
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         ncurses-term (>= 6.1+20180714-1),
-         fonts-hack
+         ncurses-term,
+         fonts-hack-ttf
 Provides: x-terminal-emulator
 Multi-Arch: foreign
 X-Comment:
