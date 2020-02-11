@@ -1,0 +1,10 @@
+.gitignore
+config.h
+debian/.debhelper/
+debian/files
+debian/stterm.debhelper.log
+debian/stterm.substvars
+debian/stterm/
+st
+st.o
+x.o
